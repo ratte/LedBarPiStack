@@ -1,4 +1,4 @@
-# Raspberry Pi Multi-Docker Stack (Node-RED, MQTT broker, Telegraf, InfluxDb, Grafana, Nginx) for deployment through Balena. [Balena](https://www.balena.io).
+# Raspberry Pi Multi-Docker Stack (Node-RED, MQTT broker, Telegraf, InfluxDb, Grafana, Nginx) for deployment through [Balena](https://www.balena.io).
 
 ## Features
 1. The Built and Deployment of this multi container application using the **BalenaCloud** services (see [section 2. How to install ...](#2-how-to-install-this-application-on-an-edge-device)).
