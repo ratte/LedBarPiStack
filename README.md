@@ -1,25 +1,23 @@
-# Composite docker application with _"8"_ containers (2x Node-RED, 2x MQTT broker, Telegraf, InfluxDb, Grafana, Nginx) deployed on Raspberry Pi through [Balena](https://www.balena.io).
+# Raspberry Pi Multi-Docker Stack (Node-RED, MQTT broker, Telegraf, InfluxDb, Grafana, Nginx) for deployment through Balena. [Balena](https://www.balena.io).
 
 ## Features
-This project is actually a proof of concept to demonstrate the following features:
-1. The ability to run **many** containers on a **Raspberry Pi 3 Model B+** (see [section 1. What](#1-what)).
-2. The Built and Deployment of this multi container application using the **BalenaCloud** services (see [section 2. How to install ...](#2-how-to-install-this-application-on-an-edge-device)).
+1. The Built and Deployment of this multi container application using the **BalenaCloud** services (see [section 2. How to install ...](#2-how-to-install-this-application-on-an-edge-device)).
 3. Monitoring the system resources of the raspberry pi using the **TIG** stack (see [section 3. System resource monitoring ...](#3-system-resource-monitoring-using-the-tig-stack-telegraf-influxdb--grafana)):
 4. That **Grafana** is very nice and powerful tool to create dashboards  (see [section 4. Grafana](#4-grafana)) and that it is easy to create or update those dashboards (see [section 4.1 Updating and adding ...](#41-updating--adding-new-grafana-dashboards)).
-5. It is possible to run **multiple Node-RED instances** on the same device (see [section 5. Node-RED](#5-node-red)).
-6. It is possible to run **multiple MQTT brokers** on the same device (see [section 6. MQTT brokers](#6-mqtt-broker)).
+5. **Node-RED instance** on the same device (see [section 5. Node-RED](#5-node-red)).
+6. **MQTT brokers** on the same device (see [section 6. MQTT brokers](#6-mqtt-broker)).
 7. A **USB memory stick** connected to the pi can be used for storing specific data (in this case it is the influxdb data) (see [section 7. USB memory stick](#7-setup-of-the-usb-memory-stick-for-influxdb)).
-8. It is possible to access the Grafana user interface and the 2 Node-RED editors **via the internet** (see [see section 8. Internet Access](#8-internet-access-via-balenas-public-url-and-nginx)).
+8. It is possible to access the Grafana user interface and the Node-RED editor **via the internet** (see [see section 8. Internet Access](#8-internet-access-via-balenas-public-url-and-nginx)).
 
 ## 1. What
-This github repository describes a composite docker application consisting of **"8"** containers that can be deployed through [BalenaCloud](https://www.balena.io/) on any arm device (e.g. a [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)) running the [balena OS](https://www.balena.io/os/).     
+This github repository describes a composite docker application consisting of **"6"** containers that can be deployed through [BalenaCloud](https://www.balena.io/) on any arm device (e.g. a [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)) running the [balena OS](https://www.balena.io/os/).     
 
-So, this application consists of the following 8 docker containers (= TIG stack + 2x Node-RED + 2x MQTT broker +  Nginx )
+So, this application consists of the following 6 docker containers (= TIG stack + Node-RED +  MQTT broker +  Nginx )
 1. [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/) - agent for collecting and reporting metrics and events
 2. [Influxdb](https://www.influxdata.com/) - Time Series Database
 3. [Grafana](https://grafana.com/) - create, explore and share dashboards
-4. 2x [Node-RED](https://nodered.org/) - flow based programming for the Internet of Things (accessible through path `/nodered` )
-5. 2x [MQTT-broker](https://mosquitto.org/) - lightweight message broker
+4. [Node-RED](https://nodered.org/) - flow based programming for the Internet of Things (accessible through path `/nodered` )
+5. [MQTT-broker](https://mosquitto.org/) - lightweight message broker
 4. [nginx](http://nginx.org/en/docs/) - is open source software for web serving, reverse proxying, caching, load balancing,....
 
 
@@ -109,3 +107,4 @@ In case you get a `502 Bad Gateway`error or a message like `Cannot GET /node-red
 1. [Initializing Grafana with preconfigured dashboards](https://ops.tips/blog/initialize-grafana-with-preconfigured-dashboards/)  [(github repository)](https://github.com/cirocosta/sample-grafana)
 2. [InfluxDB system metrics dashboard](https://grafana.com/dashboards/1138)
 3. [Grafana Series Part 1: Setting up InfluxDB, Grafana and Telegraf with Docker on Linux](https://blog.linuxserver.io/2017/11/25/how-to-monitor-your-server-using-grafana-influxdb-and-telegraf/)
+4. https://github.com/janvda/balena-node-red-mqtt-nginx-TIG-stack.git (where this Stack ist forked from)
