@@ -1,4 +1,4 @@
-# Composite docker application with _"8"_ containers (2x Node-RED, 2x MQTT broker, Telegraf, InfluxDb, Grafana, Nginx) deployed on Raspberry Pi through [Balena](https://www.balena.io).
+# Raspberry Pi Multi-Docker Stack (Node-RED, MQTT broker, Telegraf, InfluxDb, Grafana, Nginx) for deployment through [Balena](https://www.balena.io).
 
 ## Features
 This project is actually a proof of concept to demonstrate the following features:
