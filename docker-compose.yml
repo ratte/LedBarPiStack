@@ -62,4 +62,11 @@ services:
        - "80:80"
        - "443:443"
     restart: always
+  ledfx:
+    build : ledfx
+    depends_on:
+      - mqtt
+    ports:
+       - "80:80"
+    restart: always
 
