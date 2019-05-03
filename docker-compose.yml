@@ -2,6 +2,7 @@ version: '2'
 volumes:
     node-red-data:
     influxdb-data:
+    ledfx-data:
 services:
   influxdb:
     build: influxdb
@@ -51,10 +52,12 @@ services:
     ports:
        - "1880:1880"
     depends_on:
-        - mqtt
+       - mqtt
     restart: always
   ledfx:
-    build : ledfx
+    build: ledfx
+    volumes:
+       - 'ledfx-data:/data'
     ports:
        - "8888:8888"
     restart: always
