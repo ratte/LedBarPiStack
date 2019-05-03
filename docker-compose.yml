@@ -53,20 +53,19 @@ services:
     depends_on:
         - mqtt
     restart: always
+  ledfx:
+    build : ledfx
+    ports:
+       - "8888:8888"
+    restart: always
   nginx:
     build : nginx
     depends_on:
       - grafana
       - node-red
+      - ledfx
     ports:
        - "80:80"
        - "443:443"
-    restart: always
-  ledfx:
-    build : ledfx
-    depends_on:
-      - mqtt
-    ports:
-       - "80:80"
     restart: always
 

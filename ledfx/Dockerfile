@@ -12,5 +12,6 @@ COPY ./requirements.txt /requirements.txt
 RUN pip install --upgrade pip
 RUN pip install  -r /requirements.txt
 RUN pip install ledfx
+CMD ["ledfx"]
 
-    
+EXPOSE 8888    
