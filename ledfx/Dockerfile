@@ -9,8 +9,9 @@ RUN apk upgrade
 
 COPY ./requirements.txt /requirements.txt
 
-RUN pip3 install  -r /requirements.txt
-RUN pip3 install ledfx
+RUN pip install --upgrade pip
+RUN pip install  -r /requirements.txt
+RUN pip install ledfx
 
 CMD ["/bin/bash"]
     
