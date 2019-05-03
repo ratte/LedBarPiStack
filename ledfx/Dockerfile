@@ -5,6 +5,7 @@ WORKDIR /src/
 
 RUN apk update
 RUN apk upgrade
+RUN apk add portaudio
 # RUN apt install python3 python3-pip -y 
 
 COPY ./requirements.txt /requirements.txt
