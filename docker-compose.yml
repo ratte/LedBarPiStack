@@ -1,8 +1,7 @@
-version: '2'
+version: '3'
 volumes:
     node-red-data:
     influxdb-data:
-    ledfx-data:
 services:
   influxdb:
     build: influxdb
@@ -12,7 +11,7 @@ services:
     volumes:
         # take care that the mount location "/mnt/influxdb" becomes overwritten
         # by the mount location specified in the influxdb Dockerfile.
-        - 'influxdb-data:/mnt/influxdb'   
+        - 'influxdb-data:/mnt/influxdb'
     ports:
       # The API for InfluxDB is served on port 8086
       - "8082:8082"
@@ -35,7 +34,7 @@ services:
        - interval=60s
        - flush_interval=60s
   grafana:
-    build: grafana 
+    build: grafana
     ports:
        - "3000:3000"
     depends_on:
@@ -56,8 +55,6 @@ services:
     restart: always
   ledfx:
     build: ledfx
-    volumes:
-       - 'ledfx-data:/data'
     ports:
        - "8888:8888"
     restart: always
@@ -71,4 +68,3 @@ services:
        - "80:80"
        - "443:443"
     restart: always
-

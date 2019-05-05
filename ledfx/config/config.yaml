@@ -1,0 +1,6 @@
+# ledfx creates  config here: /root/.ledfx/config.yaml
+dev_mode: false
+devices: []s
+host: 127.0.0.1
+max_workers: 10
+port: 8888
